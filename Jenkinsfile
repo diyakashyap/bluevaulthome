@@ -29,7 +29,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    // Push the Docker image with the dynamic tag a
+                    // Push the Docker image with the dynamic tag
                     withDockerRegistry([credentialsId: 'dockerhub', url: 'https://index.docker.io/v1/']) {
                         sh "docker push $DOCKER_IMAGE:$TAG"
                     }
